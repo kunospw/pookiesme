@@ -22,17 +22,20 @@ public class SplashActivity extends AppCompatActivity {
         ImageView ivLogo = findViewById(R.id.ivLogo);
         TextView tvAppName = findViewById(R.id.tvAppName);
         TextView tvTagline = findViewById(R.id.tvTagline);
+        ImageView bubbles = findViewById(R.id.Bubbles); // Adding bubbles ImageView
 
         // Load animations
         Animation fadeIn = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
         Animation slideUp = AnimationUtils.loadAnimation(this, R.anim.slide_up);
+        Animation rotateAnimation = AnimationUtils.loadAnimation(this, R.anim.rotate_animation); // Load rotation animation
 
         // Apply animations
         ivLogo.startAnimation(fadeIn);
         tvAppName.startAnimation(slideUp);
         tvTagline.startAnimation(slideUp);
+        bubbles.startAnimation(rotateAnimation); // Apply rotation to bubbles
 
-        // Navigate to sign up activity after a delay
+        // Navigate to sign-up activity after a delay
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

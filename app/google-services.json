@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "790212425320",
+    "project_id": "pookies-91a4a",
+    "storage_bucket": "pookies-91a4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790212425320:android:6edfaa4487baa1b0f06ddd",
+        "android_client_info": {
+          "package_name": "com.example.pookies"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3eUDbVNHrSJknnEo1UMHjroCUToL-qUM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

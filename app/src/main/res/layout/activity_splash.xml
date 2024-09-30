@@ -18,8 +18,8 @@
 
     <ImageView
         android:id="@+id/Bubbles"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="205dp"
+        android:layout_height="205dp"
         android:src="@drawable/bubbles"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

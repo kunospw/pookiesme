@@ -29,9 +29,8 @@ public class WelcomeActivity extends AppCompatActivity {
         btnLogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // TODO: Implement login functionality or navigate to login page
-                // For now, we'll just show a toast message
-                Toast.makeText(WelcomeActivity.this, "Login functionality not implemented yet", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         });
     }

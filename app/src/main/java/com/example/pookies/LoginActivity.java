@@ -18,6 +18,14 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnLogin;
     private TextView tvSignUp;
 
+    // Dummy account credentials
+    private static final String Dum_Email = "test@example.com";
+    private static final String Dum_Pass = "password123";
+
+    // Admin account credentials (kept from the original code)
+    private static final String Admin_Email = "admin@example.com";
+    private static final String Admin_Pass = "1234";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,9 +57,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
                     Toast.makeText(LoginActivity.this, "Please enter both email and password", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Here you can add your actual authentication logic
-                    if (email.equals("admin@example.com") && password.equals("1234")) {
+                    // Check for dummy account or admin account
+                    if ((email.equals(Dum_Email) && password.equals(Dum_Pass)) ||
+                            (email.equals(Admin_Email) && password.equals(Admin_Pass))) {
                         // Successful login - Navigate to the main activity
+                        Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, WelcomeActivity.class);
                         startActivity(intent);
                         finish();  // Close LoginActivity

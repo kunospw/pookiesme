@@ -20,6 +20,11 @@ public class SignUpActivity extends AppCompatActivity {
     private Button btnSignUp;
     private TextView tvAlreadyHaveAccount;
 
+    // Dummy account credentials
+    private static final String Dum_Email = "test@example.com";
+    private static final String Dum_Name = "Test User";
+    private static final String Dum_Pass = "password123";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,13 +63,25 @@ public class SignUpActivity extends AppCompatActivity {
                 } else if (!password.equals(confirmPassword)) {
                     Toast.makeText(SignUpActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
                 } else {
-                    // Perform actual sign-up logic here (e.g., Firebase or API call)
-                    Toast.makeText(SignUpActivity.this, "Sign-up successful!", Toast.LENGTH_SHORT).show();
+                    // Check if the input matches the dummy account
+                    if (email.equals(Dum_Email) && name.equals(Dum_Name) && password.equals(Dum_Pass)) {
+                        // Dummy account sign-up success
+                        Toast.makeText(SignUpActivity.this, "Dummy account sign-up successful!", Toast.LENGTH_SHORT).show();
 
-                    // Navigate to WelcomeActivity or MainActivity
-                    Intent intent = new Intent(SignUpActivity.this, WelcomeActivity.class);
-                    startActivity(intent);
-                    finish();
+                        // Navigate to WelcomeActivity or MainActivity
+                        Intent intent = new Intent(SignUpActivity.this, WelcomeActivity.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        // For non-dummy accounts, you would typically perform actual sign-up logic here
+                        // For this example, we'll just show a message
+                        Toast.makeText(SignUpActivity.this, "Sign-up successful (non-dummy account)!", Toast.LENGTH_SHORT).show();
+
+                        // Navigate to WelcomeActivity or MainActivity
+                        Intent intent = new Intent(SignUpActivity.this, WelcomeActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
                 }
             }
         });
